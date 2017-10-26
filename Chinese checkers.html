@@ -1,0 +1,628 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <style>
+    .round-button {
+	    width:100%;
+    }
+    .round-button-circle {
+	    width: 100%;
+	    height:0;
+	    padding-bottom: 100%;
+        border-radius: 50%;
+	    border:2px solid #cfdcec;
+        overflow:hidden;
+    
+        background: gray; 
+        box-shadow: 0 0 3px gray;
+    }
+    .round-button-circle:hover {
+	    background:#30588e;
+    }
+    .round-button a {
+        display:block;
+	    float:left;
+	    width:100%;
+	    padding-top:50%;
+        padding-bottom:50%;
+	    line-height:1em;
+	    margin-top:-0.5em;
+    
+	    text-align:center;
+	    color:#e2eaf3;
+        font-family:Verdana;
+        font-size:1.2em;
+        font-weight:bold;
+        text-decoration:none;
+    }
+</style>
+
+</head>
+
+<script>
+function checkgreen(){
+var b0 = document.getElementById("pos0n13").dataset.colo;
+                    var b1 = document.getElementById("pos1n12").dataset.colo;
+                    var b2 = document.getElementById("pos1n14").dataset.colo;
+                    var b3 = document.getElementById("pos2n11").dataset.colo;
+                    var b4 = document.getElementById("pos2n13").dataset.colo;
+                    var b5 = document.getElementById("pos2n15").dataset.colo;
+                    var b6 = document.getElementById("pos3n10").dataset.colo;
+                    var b7 = document.getElementById("pos3n12").dataset.colo;
+                    var b8 = document.getElementById("pos3n14").dataset.colo;
+                    var b9 = document.getElementById("pos3n16").dataset.colo;
+                    if (b0 == "green" && b1 == "green" && b2 == "green" && b3 == "green" && b4 == "green" && b5 == "green" && b6 == "green" && b7 == "green" && b8 == "green" && b9 == "green")
+                        return true;
+return false;
+}
+function checkred(){
+var b0 = document.getElementById("pos16n13").dataset.colo;
+                    var b1 = document.getElementById("pos15n12").dataset.colo;
+                    var b2 = document.getElementById("pos15n14").dataset.colo;
+                    var b3 = document.getElementById("pos14n11").dataset.colo;
+                    var b4 = document.getElementById("pos14n13").dataset.colo;
+                    var b5 = document.getElementById("pos14n15").dataset.colo;
+                    var b6 = document.getElementById("pos13n10").dataset.colo;
+                    var b7 = document.getElementById("pos13n12").dataset.colo;
+                    var b8 = document.getElementById("pos13n14").dataset.colo;
+                    var b9 = document.getElementById("pos13n16").dataset.colo;
+                    if (b0 == "red" && b1 == "red" && b2 == "red" && b3 == "red" && b4 == "red" && b5 == "red" && b6 == "red" && b7 == "red" && b8 == "red" && b9 == "red")
+                        return true;
+return false;
+}
+function checkcyan(){
+var b0 = document.getElementById("pos9n22").dataset.colo;
+                    var b1 = document.getElementById("pos10n21").dataset.colo;
+                    var b2 = document.getElementById("pos10n23").dataset.colo;
+                    var b3 = document.getElementById("pos11n20").dataset.colo;
+                    var b4 = document.getElementById("pos11n22").dataset.colo;
+                    var b5 = document.getElementById("pos11n24").dataset.colo;
+                    var b6 = document.getElementById("pos12n19").dataset.colo;
+                    var b7 = document.getElementById("pos12n21").dataset.colo;
+                    var b8 = document.getElementById("pos12n23").dataset.colo;
+                    var b9 = document.getElementById("pos12n25").dataset.colo;
+                    if (b0 == "cyan" && b1 == "cyan" && b2 == "cyan" && b3 == "cyan" && b4 == "cyan" && b5 == "cyan" && b6 == "cyan" && b7 == "cyan" && b8 == "cyan" && b9 == "cyan")
+                        return true;
+return false;
+}
+function checkpink(){
+var b0 = document.getElementById("pos7n4").dataset.colo;
+                    var b1 = document.getElementById("pos6n3").dataset.colo;
+                    var b2 = document.getElementById("pos6n5").dataset.colo;
+                    var b3 = document.getElementById("pos5n2").dataset.colo;
+                    var b4 = document.getElementById("pos5n4").dataset.colo;
+                    var b5 = document.getElementById("pos5n6").dataset.colo;
+                    var b6 = document.getElementById("pos4n1").dataset.colo;
+                    var b7 = document.getElementById("pos4n3").dataset.colo;
+                    var b8 = document.getElementById("pos4n5").dataset.colo;
+                    var b9 = document.getElementById("pos4n7").dataset.colo;
+                    if (b0 == "pink" && b1 == "pink" && b2 == "pink" && b3 == "pink" && b4 == "pink" && b5 == "pink" && b6 == "pink" && b7 == "pink" && b8 == "pink" && b9 == "pink")
+                        return true;
+return false;
+}
+function checkblack(){
+var b0 = document.getElementById("pos7n22").dataset.colo;
+                    var b1 = document.getElementById("pos6n21").dataset.colo;
+                    var b2 = document.getElementById("pos6n23").dataset.colo;
+                    var b3 = document.getElementById("pos5n20").dataset.colo;
+                    var b4 = document.getElementById("pos5n22").dataset.colo;
+                    var b5 = document.getElementById("pos5n24").dataset.colo;
+                    var b6 = document.getElementById("pos4n19").dataset.colo;
+                    var b7 = document.getElementById("pos4n21").dataset.colo;
+                    var b8 = document.getElementById("pos4n23").dataset.colo;
+                    var b9 = document.getElementById("pos4n25").dataset.colo;
+                    if (b0 == "black" && b1 == "black" && b2 == "black" && b3 == "black" && b4 == "black" && b5 == "black" && b6 == "black" && b7 == "black" && b8 == "black" && b9 == "black")
+                        return true;
+return false;
+}
+function checkpurple(){
+var b0 = document.getElementById("pos9n4").dataset.colo;
+                    var b1 = document.getElementById("pos10n3").dataset.colo;
+                    var b2 = document.getElementById("pos10n5").dataset.colo;
+                    var b3 = document.getElementById("pos11n2").dataset.colo;
+                    var b4 = document.getElementById("pos11n4").dataset.colo;
+                    var b5 = document.getElementById("pos11n6").dataset.colo;
+                    var b6 = document.getElementById("pos12n1").dataset.colo;
+                    var b7 = document.getElementById("pos12n3").dataset.colo;
+                    var b8 = document.getElementById("pos12n5").dataset.colo;
+                    var b9 = document.getElementById("pos12n7").dataset.colo;
+                    if (b0 == "purple" && b1 == "purple" && b2 == "purple" && b3 == "purple" && b4 == "purple" && b5 == "purple" && b6 == "purple" && b7 == "purple" && b8 == "purple" && b9 == "purple")
+                        return true;
+return false;
+
+}    
+
+    function substringandrecur(v) {
+        if (v != null && v != "") {
+            var pos = v;
+            var posrowtemp = pos.substring(0, pos.indexOf('n'));
+            posrowtemp = posrowtemp.substring(3);
+            var posrow1 = parseInt(posrowtemp);
+            var poscol1 = parseInt(pos.substring(pos.indexOf('n') + 1));
+            checkrecur(posrow1, poscol1, 0);
+
+        }
+    }
+
+    function checkrecur(posrow, poscol, propogate) {
+        var v = checkvalidity(posrow, poscol - 2, 0, propogate);
+        substringandrecur(v);
+
+        v = checkvalidity(posrow, poscol + 2, 1, propogate);
+        substringandrecur(v);
+
+        v = checkvalidity(posrow + 1, poscol + 1, 2, propogate);
+        substringandrecur(v);
+
+        v = checkvalidity(posrow + 1, poscol - 1, 3, propogate);
+        substringandrecur(v);
+
+        v = checkvalidity(posrow - 1, poscol + 1, 4, propogate);
+        substringandrecur(v);
+
+        v = checkvalidity(posrow - 1, poscol - 1, 5, propogate);
+        substringandrecur(v);
+    }
+
+    function checkvalidity(posrow, poscol, type, propogate) {
+        var v = document.getElementById("pos" + posrow + "n" + poscol);
+        if (v!=null && (v.style.visibility == "visible" || v.style.visibility == "")) {
+            if (v.dataset.colo == "gray" || v.dataset.colo == "") {
+                if (propogate == 1) {
+                    v.dataset.colo = "yellow";
+                    var hin = document.getElementById("hint");
+                    if(hin.checked==true)
+                        v.style.backgroundColor = "yellow";
+                }
+            }
+            else {
+                if (v.dataset.colo != "blue") {
+                    var pr = posrow, pc = poscol;
+                    switch (type) {
+                        case 0:
+                            pc = poscol - 2;
+                            break;
+                        case 1:
+                            pc = poscol + 2;
+                            break;
+                        case 2:
+                            pr = posrow + 1;
+                            pc = poscol + 1;
+                            break;
+                        case 3:
+                            pr = posrow + 1;
+                            pc = poscol - 1;
+                            break;
+                        case 4:
+                            pr = posrow - 1;
+                            pc = poscol + 1;
+                            break;
+                        case 5:
+                            pr = posrow - 1;
+                            pc = poscol - 1;
+                            break;
+                    }
+                    v = document.getElementById("pos" + pr + "n" + pc);
+                    if (v != null && (v.style.visibility == "visible" || v.style.visibility == ""))
+                        if (v.dataset.colo == "gray" || v.dataset.colo == "") {
+                            v.dataset.colo = "yellow";
+                            if (document.getElementById("hint").checked == true)
+                                v.style.backgroundColor = "yellow";
+                            return "pos" + pr + "n" + pc;
+                        }
+                }
+            }
+        }
+        return "";
+    }
+
+    var app = angular.module('myApp', []);
+    //directive
+    app.directive("createPlace", function () {
+        return {
+            template: "some string value"
+        };
+    });
+
+    //controller
+    app.controller('myctrl', function ($scope) {
+
+        $scope.noofparticipants = [2, 3, 4, 5, 6];
+
+        $scope.getnumber = function (num) {
+            var ratings = [];
+            for (var i = 0; i < num; i++)
+                ratings.push(i)
+            return ratings;
+        }
+
+        $scope.start = function () {
+            if (document.getElementById("start").value == "Start") {
+                var b = false;
+                for (var i = 0; i < $scope.no; i++)
+                    if ($scope.mem[i] == "") {
+                        b = true;
+                        break;
+                    }
+
+                if (b == true)
+                    document.getElementById("warning").style.visibility = "visible";
+                else {
+                    $('.collapse').collapse('toggle');
+                    document.getElementById("start").value = "Stop";
+                    document.getElementById("warning").style.visibility = "hidden";
+                    $scope.createposition();
+                    $scope.pid = "";
+                    $scope.pturn = 0;
+                    $scope.pturnno = 0;
+                }
+            }
+            else {
+                document.getElementById("start").value = "Start";
+                $('.collapse').collapse('toggle')
+            }
+        }
+
+        $scope.createposition = function () {
+            for (var i = 0; i < 17; i++) {
+                for (var j = 0; j < 27; j++) {
+                    if (i < 4 || i > 12) {
+                        if (!(((i == 0 || i == 16) && j == 13) || ((i == 1 || i == 15) && (j == 12 || j == 14)) || ((i == 2 || i == 14) && (j == 11 || j == 13 || j == 15) || ((i == 3 || i == 13) && (j == 10 || j == 12 || j == 14 || j == 16)))))
+                            document.getElementById("pos" + i + "n" + j).style.visibility = "hidden";
+                        if (i < 4) {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "red";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "red";
+                        }
+                        else {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "green";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "green";
+                        }
+                    }
+                    else if (i == 4 || i == 12) {
+                        if (j % 2 == 0)
+                            document.getElementById("pos" + i + "n" + j).style.visibility = "hidden";
+                        else {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "";
+                        }
+
+                    }
+                    else if (i == 5 || i == 11) {
+                        if (j % 2 == 1 || j == 0 || j == 26)
+                            document.getElementById("pos" + i + "n" + j).style.visibility = "hidden";
+                        else {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "";
+                        }
+                    }
+                    else if (i == 6 || i == 10) {
+                        if (j % 2 == 0 || j < 2 || j > 24)
+                            document.getElementById("pos" + i + "n" + j).style.visibility = "hidden";
+                        else {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "";
+                        }
+                    }
+                    else if (i == 7 || i == 9) {
+                        if (j % 2 == 1 || j < 4 || j > 22)
+                            document.getElementById("pos" + i + "n" + j).style.visibility = "hidden";
+                        else {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "";
+                        }
+                    }
+                    else if (i == 8) {
+                        if (j % 2 == 0 || j < 4 || j > 22)
+                            document.getElementById("pos" + i + "n" + j).style.visibility = "hidden";
+                        else {
+                            document.getElementById("pos" + i + "n" + j).style.backgroundColor = "";
+                            document.getElementById("pos" + i + "n" + j).dataset.colo = "";
+                        }
+                    }
+                }
+            }
+            if ($scope.no >= 3) {
+                for (var pp = 1; pp < 8; pp = pp + 2) {
+                    document.getElementById("pos4n" + pp).style.backgroundColor = "cyan";
+                    document.getElementById("pos4n" + pp).dataset.colo = "cyan";
+                }
+                for (var pp = 2; pp < 7; pp = pp + 2) {
+                    document.getElementById("pos5n" + pp).style.backgroundColor = "cyan";
+                    document.getElementById("pos5n" + pp).dataset.colo = "cyan";
+                }
+                for (var pp = 3; pp < 6; pp = pp + 2) {
+                    document.getElementById("pos6n" + pp).style.backgroundColor = "cyan";
+                    document.getElementById("pos6n" + pp).dataset.colo = "cyan";
+                }
+                document.getElementById("pos7n4").style.backgroundColor = "cyan";
+                document.getElementById("pos7n4").dataset.colo = "cyan";
+            }
+            if ($scope.no >= 4) {
+                for (var pp = 19; pp < 26; pp = pp + 2) {
+                    document.getElementById("pos12n" + pp).style.backgroundColor = "pink";
+                    document.getElementById("pos12n" + pp).dataset.colo = "pink";
+                }
+                for (var pp = 20; pp < 25; pp = pp + 2) {
+                    document.getElementById("pos11n" + pp).style.backgroundColor = "pink";
+                    document.getElementById("pos11n" + pp).dataset.colo = "pink";
+                }
+                for (var pp = 21; pp < 24; pp = pp + 2) {
+                    document.getElementById("pos10n" + pp).style.backgroundColor = "pink";
+                    document.getElementById("pos10n" + pp).dataset.colo = "pink";
+                }
+                document.getElementById("pos9n22").style.backgroundColor = "pink";
+                document.getElementById("pos9n22").dataset.colo = "pink";
+            }
+            if ($scope.no >= 5) {
+                for (var pp = 1; pp < 8; pp = pp + 2) {
+                    document.getElementById("pos12n" + pp).style.backgroundColor = "black";
+                    document.getElementById("pos12n" + pp).dataset.colo = "black";
+                }
+                for (var pp = 2; pp < 7; pp = pp + 2) {
+                    document.getElementById("pos11n" + pp).style.backgroundColor = "black";
+                    document.getElementById("pos11n" + pp).dataset.colo = "black";
+                }
+                for (var pp = 3; pp < 6; pp = pp + 2) {
+                    document.getElementById("pos10n" + pp).style.backgroundColor = "black";
+                    document.getElementById("pos10n" + pp).dataset.colo = "black";
+                }
+                document.getElementById("pos9n4").style.backgroundColor = "black";
+                document.getElementById("pos9n4").dataset.colo = "black";
+            }
+            if ($scope.no >= 6) {
+                for (var pp = 19; pp < 26; pp = pp + 2) {
+                    document.getElementById("pos4n" + pp).style.backgroundColor = "purple";
+                    document.getElementById("pos4n" + pp).dataset.colo = "purple";
+                }
+                for (var pp = 20; pp < 25; pp = pp + 2) {
+                    document.getElementById("pos5n" + pp).style.backgroundColor = "purple";
+                    document.getElementById("pos5n" + pp).dataset.colo = "purple";
+                }
+                for (var pp = 21; pp < 24; pp = pp + 2) {
+                    document.getElementById("pos6n" + pp).style.backgroundColor = "purple";
+                    document.getElementById("pos6n" + pp).dataset.colo = "purple";
+                }
+                document.getElementById("pos7n22").style.backgroundColor = "purple";
+                document.getElementById("pos7n22").dataset.colo = "purple";
+            }
+        }
+
+        $scope.keypress = function ($event) {
+            var co = "", pturnvar = 0;
+	    switch($scope.no) {
+                case "2":
+			 switch ($scope.pturn) {
+                           case 0:
+                               co = "red";
+                               pturnvar = 1;
+                           break;
+                           case 1:
+                             co = "green";
+                            pturnvar = 0;
+                             break;
+			      }
+                          break;
+                case "3":
+			 switch ($scope.pturn) {
+                           case 0:
+                               co = "red";
+                               pturnvar = 1;
+                           break;
+                           case 1:
+                               co = "cyan";
+                               pturnvar = 2;
+                          break;
+                          case 2:
+                    co = "green";
+                    pturnvar = 0;
+                    break;
+               }
+                       break;
+                case "4":
+			 switch ($scope.pturn) {
+                           case 0:
+                               co = "red";
+                               pturnvar = 1;
+                           break;
+                           case 1:
+                               co = "cyan";
+                               pturnvar = 2;
+                          break;
+                case 2:
+                    co = "green";
+                    pturnvar = 3;
+                    break;
+                case 3:
+                    co = "pink";
+                    pturnvar = 0;
+                    break;
+               }
+                       break;
+                case "5":
+			 switch ($scope.pturn) {
+                           case 0:
+                               co = "red";
+                               pturnvar = 1;
+                           break;
+                           case 1:
+                               co = "cyan";
+                               pturnvar = 2;
+                          break;
+                          case 2:
+                               co = "black";
+                    pturnvar = 3;
+                    break;
+                case 3:
+                    co = "green";
+                    pturnvar = 4;
+                    break;
+                case 4:
+                    co = "pink";
+                    pturnvar = 0;
+                    break;
+               }
+                       break;
+                case "6":
+		       switch ($scope.pturn) {
+                           case 0:
+                               co = "red";
+                               pturnvar = 1;
+                           break;
+                           case 1:
+                               co = "cyan";
+                               pturnvar = 2;
+                          break;
+                          case 2:
+                               co = "black";
+                    pturnvar = 3;
+                    break;
+                case 3:
+                    co = "green";
+                    pturnvar = 4;
+                    break;
+                case 4:
+                    co = "pink";
+                    pturnvar = 5;
+                    break;
+                case 5:
+                    co = "purple";
+                    pturnvar = 0;
+                    break;
+            }
+            break;
+	    }
+            if ($scope.pturnno == 0) {
+                if (document.getElementById($event.target.parentElement.id).dataset.colo == co) {
+                    document.getElementById($event.target.parentElement.id).style.backgroundColor = "blue";
+                    document.getElementById($event.target.parentElement.id).dataset.colo = "blue";
+
+                    var pos = $event.target.parentElement.id;
+                    var posrowtemp = pos.substring(0, pos.indexOf('n'));
+                    posrowtemp = posrowtemp.substring(3);
+                    var posrow = parseInt(posrowtemp);
+                    var poscol = parseInt(pos.substring(pos.indexOf('n') + 1));
+
+                    checkrecur(posrow, poscol, 1);
+
+                    $scope.pturnno = 1;
+                    $scope.pid = $event.target.parentElement.id;
+                }
+            }
+            else {
+                var ll = document.getElementById($event.target.parentElement.id);
+                if (ll.dataset.colo == "blue") {
+                    ll.style.backgroundColor = co;
+                    ll.dataset.colo = co;
+                    $scope.pturnno = 0;
+                }
+                else if (ll.dataset.colo == "yellow") {
+                    document.getElementById($scope.pid).style.backgroundColor = "gray";
+                    document.getElementById($scope.pid).dataset.colo = "gray";
+                    ll.style.backgroundColor = co;
+                    ll.dataset.colo = co;
+                    $scope.pturnno = 0;
+
+                    //check win here
+                    if ($scope.somebodywon()) {
+                        alert($scope.mem[$scope.pturn] + " Wins!!");
+                        $scope.start();
+                    }
+                    $scope.pturn = pturnvar;
+                }
+
+                for (var k = 0; k < 17; k++) {
+                    for (var k1 = 0; k1 < 27; k1++) {
+                        if (document.getElementById("pos" + k + "n" + k1).style.visibility != "hidden" && document.getElementById("pos" + k + "n" + k1).dataset.colo == "yellow") {
+                            document.getElementById("pos" + k + "n" + k1).style.backgroundColor = "gray";
+                            document.getElementById("pos" + k + "n" + k1).dataset.colo = "gray";
+                        }
+                    }
+                }
+            }
+            document.getElementById("pname").textContent = $scope.mem[$scope.pturn] + "'s turn";
+        }
+
+        $scope.somebodywon = function () {
+            switch ($scope.pturn) {
+case 0:
+        		return checkred();
+	            break;                
+case 1:
+                    if($scope.no==2)
+			return checkgreen();
+		    else
+			return checkcyan();
+		    break;
+case 2:
+if($scope.no==3 || $scope.no==4)
+               return checkgreen();
+else 
+return checkblack();
+break;
+case 3:
+if($scope.no==4)
+return checkpink();
+else
+return checkgreen();
+break;
+case 4:
+return checkpink();
+break;
+case 5:
+return checkpurple();
+break;
+            }
+            return false;
+        }
+    });
+</script>
+
+<body>
+<div ng-app="myApp" ng-init="no='2'" ng-controller="myctrl">
+
+    <div id="upper" class="panel-collapse collapse in">
+        <h1>Welcome</h1>
+        <p>No Of Participants : </p>
+
+        <div>
+            <p ng-repeat="x in noofparticipants">
+                <input ng-model="$parent.no" value="{{x}}" type="radio" name="number"/> {{x}}
+            </p>
+        </div>
+
+        <h2>Enter Names</h2>
+
+        <div id="divnamefield" >
+            <p ng-repeat="x in getnumber(no)">
+                Member {{x+1}}:  <input id="{{'mem'+x}}" type="text" ng-model="$parent.mem[x]" ng-init="$parent.mem[x]='Enter Name'"/> 
+            </p>
+        </div>  
+    </div>
+
+    <p> <input id="hint" type="checkbox" checked /> Hints</p>
+    <input id="start" value="Start" type="button" ng-click="start()" class="btn btn-info"  data-target="#upper,#lower"/>
+    <p id="warning" style="color:Red; visibility:hidden">*Fields cannot be blank.</p>
+
+    <div id="lower" class="collapse">
+        <p id="pname">{{mem[0]}}'s turn</p>
+        <div>
+            <table id="board" style="height:700px;width:700px">
+                <tr ng-repeat="x in getnumber(17)" align="center">
+                    <td ng-repeat="x in getnumber(27)" align="center">
+                        <div  class="round-button"><div id="pos{{$parent.x}}n{{x}}" data-colo=""  class="round-button-circle"><a ng-click="keypress($event)" class="round-button"></a></div></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
